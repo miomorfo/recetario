@@ -28,7 +28,7 @@ public class Receta {
         this.fav = fav;
     }
 
-    
+
     public String getId() {
         return id;
     }
