@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         recetas.add(new Receta("7","tofu",1,"tofu con champiñones",
                 "abrir xd..","http://imagen.png",0));
 
-        
+
         recetas.add(new Receta("8","puré",2,"puré de papas",
                 "hervir agua..","http://imagen.png",0));
 
