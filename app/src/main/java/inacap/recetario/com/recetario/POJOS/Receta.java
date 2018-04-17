@@ -1,5 +1,9 @@
 package inacap.recetario.com.recetario.POJOS;
 
+import android.content.ContentValues;
+
+import inacap.recetario.com.recetario.SQLConstants;
+
 /**
  * Created by fernando on 22-03-18.
  */
@@ -85,6 +89,16 @@ public class Receta {
         this.fav = fav;
     }
 
-
+    public ContentValues toValues(){
+        ContentValues contentValues = new ContentValues(7);
+        contentValues.put(SQLConstants.COLUMN_ID, id);
+        contentValues.put(SQLConstants.COLUMN_NOMBRE, nombre);
+        contentValues.put(SQLConstants.COLUMN_PERSONAS, personas);
+        contentValues.put(SQLConstants.COLUMN_DESCRIPCION, descripcion);
+        contentValues.put(SQLConstants.COLUMN_PREPARACION, preparacion);
+        contentValues.put(SQLConstants.COLUMN_IMAGEN,image);
+        contentValues.put(SQLConstants.COLUMN_FAV,fav);
+        return contentValues;
+    }
 
 }
