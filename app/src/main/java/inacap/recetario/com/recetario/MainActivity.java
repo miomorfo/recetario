@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import inacap.recetario.com.recetario.Adapters.RecetasAdapter;
 import inacap.recetario.com.recetario.POJOS.Receta;
@@ -34,8 +35,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyleRecetas.setLayoutManager(linearLayoutManager);
-        recetasAdapter = new RecetasAdapter(this, recetas);
-        recyleRecetas.setAdapter(recetasAdapter);
+        //recetasAdapter = new RecetasAdapter(this, recetas); ->
+        //recyleRecetas.setAdapter(recetasAdapter); -> esto lo hago con el método update de abajo
+        update();
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,5 +85,21 @@ public class MainActivity extends AppCompatActivity {
         data.open();
         data.insertRecetas(recetas);
 
+    }
+
+    public List<Receta> getData(){
+        List<Receta> recetas = data.getAll();
+        return recetas;
+    }
+
+    public void update(){
+        recetasAdapter = new RecetasAdapter(this,getData());
+        recyleRecetas.setAdapter(recetasAdapter);
+    }
+
+    @Override
+    protected void onResume() {  //actualizar la interfaz gráfica (activity) LOL!
+        super.onResume();
+        update();
     }
 }
