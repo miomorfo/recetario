@@ -22,7 +22,7 @@ import inacap.recetario.com.recetario.R;
 public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHolder> {
 
     Context context;
-    List<Receta> recetas;
+    public List<Receta> recetas;
 
     public RecetasAdapter(Context context, List<Receta> recetas){
         this.context = context;

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -38,6 +39,28 @@ public class MainActivity extends AppCompatActivity {
         //recetasAdapter = new RecetasAdapter(this, recetas); ->
         //recyleRecetas.setAdapter(recetasAdapter); -> esto lo hago con el método update de abajo
         update();
+
+        ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                RecetasAdapter recetasAdapter = (RecetasAdapter) recyleRecetas.getAdapter();
+
+                String value = recetasAdapter.recetas.get(position).getNombre();
+
+                data.deleteItem(value);
+                update();
+
+            }
+        };
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(recyleRecetas); //lo uno al recycle =o
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

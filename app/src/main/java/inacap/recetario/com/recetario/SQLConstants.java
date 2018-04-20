@@ -31,6 +31,8 @@ public class SQLConstants {
             COLUMN_IMAGEN + " TEXT," +
             COLUMN_FAV + " INT" + ");";
 
+    public static final String WHERE_CLAUSE_NOMBRE = "nombre=?";
+
     public static final String SQL_DELETE = "DROP TABLE " + tableRecetas;
 
     public static final String[] ALL_COLUMNS = {
