@@ -20,6 +20,10 @@ public class Receta {
     private String image;
     private int fav;
 
+    public Receta(){
+
+    }
+
     public Receta(String id, String nombre, int personas, String descripcion, String preparacion,
                   String image, int fav){
 

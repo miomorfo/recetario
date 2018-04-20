@@ -2,11 +2,13 @@ package inacap.recetario.com.recetario;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import inacap.recetario.com.recetario.Helpers.DBHelper;
@@ -56,6 +58,27 @@ public class Data {
 
             }
         }
+    }
+
+
+    public List<Receta> getAll(){
+        List<Receta> recetas = new ArrayList<>();
+        Cursor cursor = sqLiteDatabase.query(SQLConstants.tableRecetas,
+                                            SQLConstants.ALL_COLUMNS,null,null,null,null,null);
+
+        while (cursor.moveToNext()) {
+            Receta receta = new Receta();
+            receta.setId(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_ID)));
+            receta.setNombre(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_NOMBRE)));
+            receta.setPersonas(cursor.getInt(cursor.getColumnIndex(SQLConstants.COLUMN_PERSONAS)));
+            receta.setDescripcion(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_DESCRIPCION)));
+            receta.setPreparacion(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_PREPARACION)));
+            receta.setImage(cursor.getString(cursor.getColumnIndex(SQLConstants.COLUMN_IMAGEN)));
+            receta.setFav(cursor.getInt(cursor.getColumnIndex(SQLConstants.COLUMN_FAV)));
+            recetas.add(receta);
+        }
+            return recetas;
+
     }
 
 
