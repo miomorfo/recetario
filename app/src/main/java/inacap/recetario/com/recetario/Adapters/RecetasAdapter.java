@@ -47,7 +47,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
 
         if(recetas.get(position).getFav()==1){
             holder.star.setImageResource(R.drawable.yellow);
-            holder.imageView.setImageResource(R.drawable.food);
+           // holder.imageView.setImageResource(R.drawable.food);
         }else{
             holder.star.setImageResource(R.drawable.black);
         }
