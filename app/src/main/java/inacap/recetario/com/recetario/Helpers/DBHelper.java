@@ -26,7 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) { //nueva version de la DB
         sqLiteDatabase.execSQL(SQLConstants.SQL_DELETE);
         onCreate(sqLiteDatabase);
 
