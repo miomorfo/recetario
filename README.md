@@ -1,6 +1,9 @@
 # recetario
 
-## aplicación proyecto de android para universidad inacap 
+## aplicación proyecto de android para universidad inacap
+### ramo: proyecto de infraestructura
+
+![screenshot](images/captura.png)
 
 ### agregar modulo de recycle view 
 -> Gradle Script -> build.gradle(Module.app) ->
