@@ -145,11 +145,15 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.favs:
-                Toast.makeText(this,"Favoritos",Toast.LENGTH_LONG).show();
+                //Toast.makeText(this,"Favoritos",Toast.LENGTH_LONG).show();
+                recetasAdapter = new RecetasAdapter(this,data.getFavs()); //trae la lista de favoritos
+                recyleRecetas.setAdapter(recetasAdapter); //adaptador actuaizado
                 return true;
 
             case R.id.personas:
-                Toast.makeText(this,"Personas",Toast.LENGTH_LONG).show();
+                //Toast.makeText(this,"Personas",Toast.LENGTH_LONG).show();
+                recetasAdapter = new RecetasAdapter(this,data.getPersonas(2));
+                recyleRecetas.setAdapter(recetasAdapter);
                 return true;
 
             default:

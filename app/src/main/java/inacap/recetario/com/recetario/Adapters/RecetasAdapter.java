@@ -39,7 +39,7 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {  //creacion parte visual
         holder.nombre.setText(recetas.get(position).getNombre());
         holder.personas.setText("Personas: "+ String.valueOf(recetas.get(position).getPersonas())) ;
         holder.descripcion.setText(recetas.get(position).getDescripcion());
@@ -47,9 +47,17 @@ public class RecetasAdapter extends RecyclerView.Adapter<RecetasAdapter.ViewHold
 
         if(recetas.get(position).getFav()==1){
             holder.star.setImageResource(R.drawable.yellow);
+            holder.imageView.setImageResource(R.drawable.food);
         }else{
             holder.star.setImageResource(R.drawable.black);
         }
+
+        //cargar imagen
+
+        holder.imageView.setImageResource(R.drawable.food);
+
+
+
 
     }
 

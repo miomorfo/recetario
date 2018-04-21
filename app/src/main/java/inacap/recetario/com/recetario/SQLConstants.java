@@ -33,6 +33,10 @@ public class SQLConstants {
 
     public static final String WHERE_CLAUSE_NOMBRE = "nombre=?";
 
+    public static final String WHERE_CLAUSE_FAV = "fav=?";
+
+    public static final String WHERE_CLAUSE_PERSONAS = "personas=?";
+
     public static final String SQL_DELETE = "DROP TABLE " + tableRecetas;
 
     public static final String[] ALL_COLUMNS = {
