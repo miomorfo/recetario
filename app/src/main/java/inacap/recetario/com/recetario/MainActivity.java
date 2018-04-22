@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.favs:
                 //Toast.makeText(this,"Favoritos",Toast.LENGTH_LONG).show();
                 recetasAdapter = new RecetasAdapter(this,data.getFavs()); //trae la lista de favoritos
-                recyleRecetas.setAdapter(recetasAdapter); //adaptador actuaizado
+                recyleRecetas.setAdapter(recetasAdapter); //adaptador actualizado
                 return true;
 
             case R.id.personas:
