@@ -60,8 +60,19 @@ public class MainActivity extends AppCompatActivity {
                 data.deleteItem(value);
                 update();
 
+
             }
+
+
+
+
         };
+
+
+
+
+
+
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(recyleRecetas); //lo uno al recycle =o
@@ -106,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         recetas.add(new Receta("8","puré",2,"puré de papas",
-                "hervir agua..","http://imagen.png",0));
+                "hervir agua..","http://imagen.png",1));
 
         data = new Data(this);
         data.open();
