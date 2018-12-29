@@ -20,7 +20,7 @@ deben ser iguales en versión a
 ```
 dependencies {
     ...
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:25.1.0'
 }
 ```
 
